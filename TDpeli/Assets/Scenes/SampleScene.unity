@@ -516,6 +516,7 @@ GameObject:
   - component: {fileID: 923266744}
   - component: {fileID: 923266743}
   - component: {fileID: 923266742}
+  - component: {fileID: 923266745}
   m_Layer: 0
   m_Name: Torni1
   m_TagString: Untagged
@@ -538,7 +539,7 @@ MonoBehaviour:
   liikkuvaObjekti: {fileID: 642551191}
   ammuksenPrefab: {fileID: 2368563479929644092, guid: eb44c5c0a8449144a9eb0e391aae09f0, type: 3}
   ampumisNopeus: 5
-  ampumisVali: 0.5
+  ampumisVali: 1
 --- !u!212 &923266743
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -607,6 +608,19 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &923266745
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 923266741}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f40d941ad8f9fa449b42b2ef3f334218, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  katsoJaAmpu: {fileID: 923266742}
 --- !u!1001 &8869885136604822360
 PrefabInstance:
   m_ObjectHideFlags: 0
