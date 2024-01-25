@@ -3,16 +3,18 @@ using static UnityEngine.GraphicsBuffer;
 
 public class LiikutaObjektia : MonoBehaviour
 {
-    public float speed = 5f; // M‰‰rittele objektin liikkumisnopeus
+    public EnemyInfo enemyInfo;
     public int waypointIndex;
 
     public Vector3 waypointPosition;
 
     private Transform path;
+    private GameManager gameManager;
 
     private void Start()
     {
         path = GameObject.Find("Path").transform;
+        gameManager = GameObject.Find("GameManager").GetComponent<GameManager>();
         CheckAndGetWaypoint();
     }
 
@@ -25,12 +27,13 @@ public class LiikutaObjektia : MonoBehaviour
         else if (!CheckAndGetWaypoint())
         {
             Destroy(gameObject);
+            gameManager.TakeDamage(enemyInfo.damage);
         }
     }
 
     void Liikuta()
     {
-        transform.position = Vector3.MoveTowards(transform.position, waypointPosition, speed * Time.deltaTime);
+        transform.position = Vector3.MoveTowards(transform.position, waypointPosition, enemyInfo.speed * Time.deltaTime);
     }
 
     public bool CheckAndGetWaypoint()
